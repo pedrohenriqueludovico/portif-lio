@@ -1,0 +1,319 @@
+/* =========================
+   RESET + BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #0f0f1a, #0b0b12);
+  color: #eaeaf0;
+  line-height: 1.6;
+}
+
+/* =========================
+   VARIÁVEIS (FACILITA MUITO)
+========================= */
+:root {
+  --bg-main: #0f0f1a;
+  --bg-card: #161626;
+  --primary: #7c7cff;
+  --secondary: #00e0ff;
+  --text-main: #eaeaf0;
+  --text-muted: #a0a0b5;
+  --border: rgba(255, 255, 255, 0.08);
+  --radius: 12px;
+}
+
+/* =========================
+   CONTAINERS
+========================= */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 1.2rem;
+}
+
+/* =========================
+   TIPOGRAFIA
+========================= */
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 2.1rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #0b0b12;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(124, 124, 255, 0.35);
+}
+
+/* =========================
+   CARDS (PROJETOS)
+========================= */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+section {
+  padding: 4rem 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+/* =========================
+   HEADER
+========================= */
+.header {
+  padding: 2rem 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 600px;
+  margin: 1.2rem 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-outline {
+  background: none;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+/* =========================
+   PROJETOS GRID
+========================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* =========================
+   SOBRE / CONTATO
+========================= */
+.text-limit {
+  max-width: 700px;
+}
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  /* Header */
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* Hero */
+  h1 {
+    font-size: 2.1rem;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Projetos */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Texto geral */
+  p {
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 3rem 0;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+}
+
+/* Telas grandes (monitores wide) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1250px;
+  }
+
+  h1 {
+    font-size: 3.4rem;
+  }
+}
+.logo-img {
+  height: 32px;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+}
+
+.tag-new {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #0b0b12;
+}
+
+.tag-old {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
